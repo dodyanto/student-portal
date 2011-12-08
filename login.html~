@@ -1,0 +1,34 @@
+<html>
+<head>
+<h1>Questions and Answers Portal<h1>
+
+<body>
+
+<img src="thumbnails/question.gif" align="right" height="550px" width="350px"/>
+<img src="thumbnails/qu.jpg" align="right" height="550px" width="350px"/>
+<img src="thumbnails/qa.jpg" align="right" height="550px" width="350px"/>
+
+
+                  <h2 class="title">Dive Into ....</h2>
+   
+              
+                    <div id="loginblock">
+                      <form action="login.php" method="post">
+                        <p>Email_ID:<br></br>
+                          <input type="text" name="email_id" class="login" value="example@domain.com" tabindex="40" />
+                        </p>
+                        <p>Password:<br></br>
+                          <input type="password" name="password" class="login" tabindex="41" />
+                        </p>
+                        <p><input type="hidden" name="processlogin" value="1" /> <input type="hidden" name="return" value="" /> <input class="checkbox" type="checkbox" name="persistent" tabindex="42" /> <small>Remember my Password</small>
+                        </p>
+                        <p>
+                          <input type="submit" value="Turn Me On!!" class="submit-s" tabindex="43" />
+                        </p>
+                      </form>
+                    </div>
+      
+
+             
+</body>
+</html>

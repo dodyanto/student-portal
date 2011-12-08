@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+<?php
+
+$con = mysql_connect("localhost","root","");
+if (!$con)
+{
+die('Could not connect:' .mysql_error());
+}
+mysql_select_db("portal", $con);
+mysql_query("INSERT INTO posts(user_id,tag_id,post_title,post_body,tags)
+VALUES
+('25','2','$_POST[post_title]','$_POST[post_body]','$_POST[tags]')");
+
+
+echo "Successfully Asked the Question";
+mysql_close($con);
+?>
+</body>
+</html>
+
+

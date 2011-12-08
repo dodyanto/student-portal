@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+<name>tarun</name>
+<phone>2147483647</phone>
+<college>rvce</college>
+<dept>ise</dept>
+<photo>uploads/16.jpg</photo>
+<email>tarun.196@gmail.com</email>
+<noq>20</noq>
+</data>
