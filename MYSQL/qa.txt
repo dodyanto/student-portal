@@ -1,0 +1,142 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 04, 2011 at 01:58 PM
+-- Server version: 5.1.37
+-- PHP Version: 5.3.0
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `qa`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `achievement`
+--
+
+CREATE TABLE IF NOT EXISTS `achievement` (
+  `aid` int(11) NOT NULL AUTO_INCREMENT,
+  `a_name` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`aid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `achievement`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `com_id` int(11) NOT NULL AUTO_INCREMENT,
+  `comment` varchar(200) DEFAULT NULL,
+  `msg_id_fk` int(11) DEFAULT NULL,
+  `uid_fk` int(11) DEFAULT NULL,
+  `ip` varchar(30) DEFAULT NULL,
+  `created` int(11) DEFAULT '1269249260',
+  PRIMARY KEY (`com_id`),
+  KEY `msg_id_fk` (`msg_id_fk`),
+  KEY `uid_fk` (`uid_fk`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=78 ;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`com_id`, `comment`, `msg_id_fk`, `uid_fk`, `ip`, `created`) VALUES
+(73, 'hello 1st comment', 99, 16, '127.0.0.1', 1322946344),
+(76, 'type boss...', 103, 16, '127.0.0.1', 1322958574),
+(64, 'god help..!!', 98, 16, '127.0.0.1', 1322942625),
+(65, 'hello...hope it works atlesat now', 98, 16, '127.0.0.1', 1322942763),
+(75, 'go to os.com', 108, 16, '127.0.0.1', 1322950764);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `msg_id` int(11) NOT NULL AUTO_INCREMENT,
+  `message` varchar(100) DEFAULT NULL,
+  `tid` int(11) NOT NULL,
+  `message_dis` varchar(200) DEFAULT NULL,
+  `uid_fk` int(11) DEFAULT NULL,
+  `ip` varchar(30) DEFAULT NULL,
+  `created` int(11) DEFAULT '1269249260',
+  `nov` int(5) DEFAULT '0',
+  `noc` int(5) DEFAULT '0',
+  PRIMARY KEY (`msg_id`),
+  KEY `uid_fk` (`uid_fk`),
+  KEY `tid` (`tid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=115 ;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`msg_id`, `message`, `tid`, `message_dis`, `uid_fk`, `ip`, `created`, `nov`, `noc`) VALUES
+(100, 'how to find complexity of an algorithm', 1, 'please give me references', 16, NULL, 1269249260, 0, 0),
+(98, 'how can i make a mirror image of tree', 2, 'pls help me out...', 16, NULL, 1269249260, 2, 2),
+(99, 'tree or trie', 1, 'please explain', 16, NULL, 1269249260, 2, 1),
+(101, 'data structures?', 2, 'all possible data structures', 16, NULL, 1269249260, 0, 0),
+(102, 'hello ', 1, 'sflnlfn', 16, NULL, 1269249260, 0, 0),
+(103, 'what is bada', 3, 'explain bada pls??', 16, NULL, 1269249260, 0, 1),
+(111, 'cool', 4, 'fhsfjgjd', 16, NULL, 1269249260, 0, 0),
+(109, 'y is rahul awake at 6 on a sunday', 3, 'reason reqd with proof..!!', 16, NULL, 1269249260, 0, 0),
+(108, 'os questions please', 4, 'hello os questions please..!!', 16, NULL, 1269249260, 4, 1),
+(112, 'coolas', 4, 'fhsfjgjd', 16, NULL, 1269249260, 0, 0),
+(113, 'dfh', 1, 'dftyfdh', 16, NULL, 1269249260, 0, 0),
+(114, 'dfhsdfdfdf', 3, 'dftyfdhdffd', 16, NULL, 1269249260, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tag`
+--
+
+CREATE TABLE IF NOT EXISTS `tag` (
+  `tid` int(11) NOT NULL AUTO_INCREMENT,
+  `tagname` varchar(20) DEFAULT NULL,
+  `nou` int(5) DEFAULT NULL,
+  `nop` int(5) DEFAULT NULL,
+  PRIMARY KEY (`tid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `tag`
+--
+
+INSERT INTO `tag` (`tid`, `tagname`, `nou`, `nop`) VALUES
+(1, 'ada', 1, 4),
+(2, 'dsc', 1, 2),
+(3, 'mobile', 1, 3),
+(4, 'OS', 1, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) DEFAULT NULL,
+  `password` varchar(30) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` int(10) DEFAULT '0',
+  `college` varchar(25) DEFAULT NULL,
+  `dept` varchar(15) DEFAULT NULL,
+  `photo` varchar(100) DEFAULT NULL,
+  `noq` int(5) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
